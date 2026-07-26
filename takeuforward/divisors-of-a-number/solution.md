@@ -12,13 +12,34 @@
 class Solution {
 public:
     vector<int> divisors(int n) {
+
+        // brute force soln
+
+        // vector<int> ans;
+
+        // for(int i = 1; i <= n; i++){
+        //     if(n % i == 0){
+        //         ans.push_back(i);
+        //     }
+        // }
+        // return ans;
+
+        // optimal soln 
+
+        int sqrtN = sqrt(n);
         vector<int> ans;
 
-        for(int i = 1; i <= n; i++){
+        for(int i = 1; i <= sqrtN; i++){
             if(n % i == 0){
                 ans.push_back(i);
+
+
+                if(i != n/i){
+                    ans.push_back(n/i);
+                }
             }
         }
+        sort(ans.begin(), ans.end());
         return ans;
     }
 };
