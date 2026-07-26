@@ -31,7 +31,7 @@ public:
         // return;
 
 
-        // Optimal approach by swapping them
+        // Optimal approach by swapping them inline
 
 
         int p1 = 0, p2 = n - 1;
