@@ -12,18 +12,36 @@
 class Solution {
 public:
     void reverse(int arr[], int n) {
-        int* ans = new int[n];
+
+        // brute force approach using extra array temp
+
+
+        // int* ans = new int[n];
         
-        for (int i = n-1; i >= 0; i--) {
-            ans[n-i-1] = arr[i];
+        // for (int i = n-1; i >= 0; i--) {
+        //     ans[n-i-1] = arr[i];
+        // }
+        
+        // for(int i=0; i < n; i++) {
+        //     arr[i] = ans[i];
+        // }
+        
+        // delete[] ans; 
+        
+        // return;
+
+
+        // Optimal approach by swapping them
+
+
+        int p1 = 0, p2 = n - 1;
+        while (p1 < p2) {
+            int tmp = arr[p1];
+            arr[p1] = arr[p2];
+            arr[p2] = tmp;
+            p1++;
+            p2--;
         }
-        
-        for(int i=0; i < n; i++) {
-            arr[i] = ans[i];
-        }
-        
-        delete[] ans; 
-        
         return;
     }
 };
