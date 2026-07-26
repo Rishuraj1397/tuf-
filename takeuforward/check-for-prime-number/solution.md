@@ -1,0 +1,31 @@
+# Check for Prime Number
+
+## Problem Information
+- **Platform:** Takeuforward
+- **Difficulty:** Unknown
+- **URL:** https://takeuforward.org/plus/dsa/problems/check-for-prime-number
+- **Date:** 2026-07-26
+
+## Solution
+
+```cpp
+class Solution {
+public:
+    bool isPrime(int n) {
+        //your code goes here
+        if(n == 1){
+            return false;
+        }
+
+        for(int i = 2; i * i <= n; i++){
+            if(n % i == 0){
+                return false;
+            }
+        }
+        return true;
+    }
+};
+```
+
+---
+*Generated automatically by LeetFeedback Extension*
