@@ -20,16 +20,22 @@ class Solution {
         while (i >= 0 && (s[i] - '0') % 2 == 0) {
             i--;
         }
-
+        
+        // if we don't find any odd inteager
         if (i < 0) return "";
 
+        // we will cut the afterpart of the string after finding that one odd
         s.erase(i + 1);
 
+
+        // This one is for removing leading 0
         int start = 0;
 
         while (start < s.size() && s[start] == '0') {
             start++;
         }
+
+        // this one for removing 0 after searching
         s.erase(0, start);
         return s;
     }
