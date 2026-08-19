@@ -4,52 +4,78 @@
 - **Platform:** Takeuforward
 - **Difficulty:** Unknown
 - **URL:** https://takeuforward.org/plus/dsa/problems/highest-occurring-element-in-an-array
-- **Date:** 2026-07-27
+- **Date:** 2026-08-19
 
 ## Solution
 
 ```cpp
-class Solution {
+class Solution { //5 1 5 2 1 1
 public:
-    /* Function to get the highest 
-    occuring element in array n */
-    int mostFrequentElement(vector<int> &nums) {
-        
-        // Variable to store the size of array
+    int mostFrequentElement(vector<int>& nums) {
+
+        //Brute force
+        // int n = nums.size();
+
+        // int maxfreq = 0;
+
+        // int maxEl = -1;
+
+        // vector<bool> visisted(n,false);
+
+
+        // for(int i = 0; i < n; i++){
+        //     if(visisted[i]){
+        //         continue;
+        //     }
+
+        //     int freq = 0;
+
+        //     for(int j = i; j < n; j++){
+        //         if(nums[i] == nums[j]){
+        //             freq++;
+        //             visisted[j] = true;
+        //         }
+        //     }
+
+
+        //     if(freq > maxfreq){
+        //         maxfreq = freq;
+        //         maxEl = nums[i];
+        //     }else if(freq == maxfreq){
+        //         maxEl = min(maxEl, nums[i]);
+        //     }
+        // }
+        // return maxEl;
+
+
+
+        // Optimmal Solution
+
         int n = nums.size();
-        
-        // Variable to store maximum frequency
-        int maxFreq = 0; 
-        
-        /* Variable to store element 
-        with maximum frequency */
-        int maxEle;
-        
-        // HashMap
+
+        int maxfreq = 0;
+
+        int maxEl = -1;
+
         unordered_map<int, int> mpp;
-        
-        // Iterating on the array
-        for (int i = 0; i < n; i++) {
-            // Updating hashmap 
+
+        for(int i = 0; i < n; i++){
             mpp[nums[i]]++;
         }
-            
-        // Iterate on the map
-        for(auto it : mpp) {
-            int ele = it.first; // Key
-            int freq = it.second; // Value
-            
-            if(freq > maxFreq) {
-                maxFreq = freq;
-                maxEle = ele;
-            }
-            else if(freq == maxFreq) {
-                maxEle = min(maxEle, ele);
+
+        for(auto it : mpp){
+            int ele = it.first;
+            int freq = it.second;
+
+
+            if(freq > maxfreq){
+                maxfreq = freq;
+                maxEl = ele;
+            }else if(freq == maxfreq){
+                maxEl = min(maxEl, ele);
             }
         }
-        
-        // Return the result
-        return maxEle;
+        return maxEl;
     }
 };
 ```
