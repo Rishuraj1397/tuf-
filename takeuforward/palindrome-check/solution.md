@@ -4,7 +4,7 @@
 - **Platform:** Takeuforward
 - **Difficulty:** Unknown
 - **URL:** https://takeuforward.org/plus/dsa/problems/palindrome-check
-- **Date:** 2026-08-18
+- **Date:** 2026-08-19
 
 ## Solution
 
