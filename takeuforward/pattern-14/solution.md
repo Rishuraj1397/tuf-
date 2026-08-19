@@ -11,15 +11,16 @@
 ```cpp
 class Solution {
 public:
-    void pattern13(int n) {
-        int cnt = 1;
+    void pattern14(int n) {
         for(int i = 1; i <= n; i++){
+            char ch = 'A';
             for(int j = 1; j <= i; j++){
-                cout << cnt << " ";
-                cnt++;
+                cout << ch;
+                ch++;
             }
             cout << endl;
         }
+
     }
 };
 ```
